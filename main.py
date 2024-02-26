@@ -17,18 +17,39 @@ playerImg = pygame.image.load('ship.png')
 playerImg = pygame.transform.scale(playerImg, (64, 64))
 playerX = 370
 playerY = 480
+playerX_change = 0
+playerY_change = 0
 
 
-def player():
-    screen.blit(playerImg, (playerX, playerY))
+def player(x, y):
+    screen.blit(playerImg, (x, y))
 
 
 # Game loop
 running = True
 while running:
     screen.fill((0, 0, 0))
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-    player()
+        # if keystroke is pressed check whether its right or left
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                playerX_change = -0.3
+            if event.key == pygame.K_RIGHT:
+                playerX_change = 0.3
+            if event.key == pygame.K_UP:
+                playerY_change = -0.3
+            if event.key == pygame.K_DOWN:
+                playerY_change = 0.3
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
+                playerX_change = 0
+            if event.key == pygame.K_UP or event.key == pygame.K_DOWN:
+                playerY_change = 0
+
+    playerX += playerX_change
+    playerY += playerY_change
+    player(playerX, playerY)
     pygame.display.update()
