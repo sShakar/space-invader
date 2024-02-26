@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfd3ddcd-e2b6-4ec0-94c3-1fd34807167f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/space-invader.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/space-invader.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -108,7 +106,8 @@
       <workItem from="1708849069703" duration="55000" />
       <workItem from="1708857017911" duration="277000" />
       <workItem from="1708857304713" duration="1789000" />
-      <workItem from="1708859876080" duration="3453000" />
+      <workItem from="1708859876080" duration="4368000" />
+      <workItem from="1708937003938" duration="5533000" />
     </task>
     <servers />
   </component>
@@ -116,6 +115,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/space_invader$main.coverage" NAME="main Coverage Results" MODIFIED="1708863621930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/space_invader$main.coverage" NAME="main Coverage Results" MODIFIED="1708940572909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
