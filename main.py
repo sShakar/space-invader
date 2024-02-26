@@ -50,6 +50,16 @@ while running:
                 playerY_change = 0
 
     playerX += playerX_change
+    if playerX < 0:
+        playerX = 0
+    elif playerX > pygame.display.get_window_size()[0] - playerImg.get_width():
+        playerX = pygame.display.get_window_size()[0] - playerImg.get_width()
+
     playerY += playerY_change
+    if playerY < 0:
+        playerY = 0
+    elif playerY > pygame.display.get_window_size()[1] - playerImg.get_height():
+        playerY = pygame.display.get_window_size()[1] - playerImg.get_height()
+
     player(playerX, playerY)
     pygame.display.update()
