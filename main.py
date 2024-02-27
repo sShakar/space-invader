@@ -130,6 +130,14 @@ while running:
 
     # Checking for enemy boundary
     for i in range(num_of_enemies):
+        # Game Over
+        if enemyY[i] > 440:
+            for j in range(num_of_enemies):
+                enemyY[j] = 2000
+            font = pygame.font.Font('freesansbold.ttf', 64)
+            over_text = font.render("GAME OVER", True, (255, 255, 255))
+            screen.blit(over_text, (200, 250))
+            break
         enemyX[i] += enemyX_change[i]
         if enemyX[i] < 0:
             enemyX_change[i] = 2
