@@ -8,6 +8,11 @@ pygame.init()
 # Create the screen
 screen = pygame.display.set_mode((800, 600))
 
+# Background
+backgroundImg = pygame.image.load('background.png')
+backgroundImg = pygame.transform.scale(backgroundImg,
+                                       (pygame.display.get_window_size()[0], pygame.display.get_window_size()[1]))
+
 # Title and Icon
 pygame.display.set_caption("Space Invaders")
 icon = pygame.image.load('ufo.png')
@@ -25,7 +30,7 @@ playerY_change = 0
 enemyImg = pygame.image.load('enemy.png')
 enemyX = random.randint(0, 800)
 enemyY = random.randint(50, 150)
-enemyX_change = 0.3
+enemyX_change = 2
 enemyY_change = 40
 
 
@@ -41,20 +46,20 @@ def enemy(x, y):
 running = True
 while running:
     screen.fill((0, 0, 0))
-
+    screen.blit(backgroundImg, (0, 0))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
         # if keystroke is pressed check whether its right or left
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                playerX_change = -0.3
+                playerX_change = -5
             if event.key == pygame.K_RIGHT:
-                playerX_change = 0.3
+                playerX_change = 5
             if event.key == pygame.K_UP:
-                playerY_change = -0.3
+                playerY_change = -5
             if event.key == pygame.K_DOWN:
-                playerY_change = 0.3
+                playerY_change = 5
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
                 playerX_change = 0
@@ -77,10 +82,10 @@ while running:
     # Checking for enemy boundary
     enemyX += enemyX_change
     if enemyX < 0:
-        enemyX_change = 0.3
+        enemyX_change = 2
         enemyY += enemyY_change
     elif enemyX > pygame.display.get_window_size()[0] - enemyImg.get_width():
-        enemyX_change = -0.3
+        enemyX_change = -2
         enemyY += enemyY_change
 
     player(playerX, playerY)
