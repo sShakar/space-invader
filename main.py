@@ -50,7 +50,16 @@ bulletX_change = 0
 bulletY_change = 10
 bullet_state = "ready"  # ready | fire
 
-score = 0
+score_value = 0
+font = pygame.font.Font('freesansbold.ttf', 32)
+
+textX = 10
+textY = 10
+
+
+def show_score(x, y):
+    score = font.render("Score: " + str(score_value), True, (255, 255, 255))
+    screen.blit(score, (x, y))
 
 
 def player(x, y):
@@ -129,7 +138,7 @@ while running:
             bullet_state = "ready"
             enemyX[i] = random.randint(0, 800)
             enemyY[i] = random.randint(50, 150)
-            score += 1
+            score_value += 1
 
         enemy(enemyX[i], enemyY[i], i)
 
@@ -142,4 +151,5 @@ while running:
         bulletY -= bulletY_change
 
     player(playerX, playerY)
+    show_score(textX, textY)
     pygame.display.update()
